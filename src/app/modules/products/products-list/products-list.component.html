@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row text-center">
+        <h1 class="my-5">ALL PRODUCTS</h1>
+        <div class="col-12 col-lg-6" *ngFor="let product of allProducts">
+            <div class="card mb-3">
+                <div class="card-body py-5">
+                    <img [src]="product.image" class="mb-3" height="250" width="200" alt="...">
+                    <h5 class="card-title">{{product.title}}</h5>
+                    <p class="card-text">${{product.price}}</p>
+                    <p class="card-text"><small class="text-muted">{{product.category | titlecase}}</small></p>
+                    <a [routerLink]="'details/' + product.id"><button class="customBtn">View Details</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

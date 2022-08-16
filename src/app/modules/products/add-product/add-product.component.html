@@ -1,0 +1,37 @@
+<div class="container">
+    <h1 class="my-5 text-center">ADD NEW PRODUCT</h1>
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="row g-3">
+                <div class="col-md-6">
+                    <label for="inputTitle" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="inputTitle" placeholder="Product Name"
+                        formControlName="title">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPrice" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="inputPrice" placeholder="Product Price"
+                        formControlName="price">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCategory" class="form-label">Category</label>
+                    <input type="text" class="form-control" id="inputCategory" placeholder="Product Category"
+                        formControlName="category">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputImage" class="form-label">Image</label>
+                    <input type="text" class="form-control" id="inputImage" placeholder="Product Image URL"
+                        formControlName="image">
+                </div>
+                <div class="col-12 form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="inputDescription"
+                        formControlName="description" style="height: 100px"></textarea>
+                    <label for="inputDescription">Description</label>
+                </div>
+                <div class="col-12 mt-5 text-center">
+                    <button type="submit" class="customBtn" [disabled]="!productForm.valid">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
